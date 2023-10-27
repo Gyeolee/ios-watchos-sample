@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button {
+                WCSession.default.sendMessage(["TEST": "ABC"], replyHandler: nil)
+            } label: {
+                Text("TEST")
+            }
+
         }
         .padding()
     }

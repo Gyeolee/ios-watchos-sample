@@ -19,6 +19,5 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         assert(WCSession.isSupported(), "This sample requires a platform supporting Watch Connectivity!")
         WCSession.default.delegate = sessionDelegator
         WCSession.default.activate()
-        print("ExtensionDelegate WCSession.default.activate()")
     }
 }
