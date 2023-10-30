@@ -9,16 +9,51 @@ import SwiftUI
 import WatchConnectivity
 
 struct ContentView: View {
+    @State private var count: Int = 0
+    
+    private let imageWidth: CGFloat = 50
+    private let imageHeight: CGFloat = 50
+    
     var body: some View {
         VStack {
-            Button {
-                WCSession.default.sendMessage(["TEST": "ABC"], replyHandler: nil)
-            } label: {
-                Text("TEST")
+            Text("\(count)")
+                .font(.largeTitle)
+            
+            HStack {
+                Button(action: minus) {
+                    Image(systemName: "minus")
+                        .frame(width: imageWidth, height: imageHeight)
+                        .contentShape(Rectangle())
+                }
+                .foregroundStyle(.primary)
+                
+                Spacer()
+                    .frame(width: 1, height: imageHeight - 30)
+                    .background(.primary)
+                
+                Button(action: plus) {
+                    Image(systemName: "plus")
+                        .frame(width: imageWidth, height: imageHeight)
+                        .contentShape(Rectangle())
+                }
+                .foregroundStyle(.primary)
             }
-
+            .background(Color.gray)
+            .clipShape(RoundedRectangle(cornerRadius: 4))
         }
-        .padding()
+    }
+}
+
+extension ContentView {
+    private func minus() {
+        guard count > 0 else {
+            return
+        }
+        count -= 1
+    }
+    
+    private func plus() {
+        count += 1
     }
 }
 
