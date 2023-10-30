@@ -11,6 +11,8 @@ import WatchConnectivity
 struct ContentView: View {
     @State private var count: Int = 0
     
+    private var session = WCSession.default
+    
     private let imageWidth: CGFloat = 50
     private let imageHeight: CGFloat = 50
     
@@ -50,10 +52,12 @@ extension ContentView {
             return
         }
         count -= 1
+        session.sendMessage(["count": count], replyHandler: nil)
     }
     
     private func plus() {
         count += 1
+        session.sendMessage(["count": count], replyHandler: nil)
     }
 }
 
