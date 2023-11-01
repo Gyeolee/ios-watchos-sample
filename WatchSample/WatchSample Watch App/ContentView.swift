@@ -19,30 +19,21 @@ struct ContentView: View {
                 .font(.largeTitle)
             
             HStack {
-                Button(action: tapMinus) {
+                Button {
+                    counter.subtract()
+                    try? session.updateApplicationContext(["value": counter.value])
+                } label: {
                     Image(systemName: "minus")
                 }
                 
-                Button(action: tapPlus) {
+                Button {
+                    counter.add()
+                    try? session.updateApplicationContext(["value": counter.value])
+                } label: {
                     Image(systemName: "plus")
                 }
             }
         }
-    }
-}
-
-extension ContentView {
-    private func tapMinus() {
-        guard counter.value > 0 else {
-            return
-        }
-        counter.value -= 1
-//        session.sendMessage(["count": count], replyHandler: nil)
-    }
-    
-    private func tapPlus() {
-        counter.value += 1
-//        session.sendMessage(["count": count], replyHandler: nil)
     }
 }
 

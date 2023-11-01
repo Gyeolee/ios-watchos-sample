@@ -8,5 +8,18 @@
 import SwiftUI
 
 final class Counter: ObservableObject {
-    @Published var value: Int = 0
+    @Published private(set) var value: Int = 0
+    
+    func add() {
+        value += 1
+    }
+    
+    func subtract() {
+        guard value > 0 else { return }
+        value -= 1
+    }
+    
+    func value(_ value: Int) {
+        self.value = value
+    }
 }

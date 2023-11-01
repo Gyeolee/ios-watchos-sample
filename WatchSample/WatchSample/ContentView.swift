@@ -22,7 +22,10 @@ struct ContentView: View {
                 .font(.largeTitle)
             
             HStack {
-                Button(action: tapMinus) {
+                Button {
+                    counter.subtract()
+                    try? session.updateApplicationContext(["value": counter.value])
+                } label: {
                     Image(systemName: "minus")
                         .frame(width: imageWidth, height: imageHeight)
                         .contentShape(Rectangle())
@@ -33,7 +36,10 @@ struct ContentView: View {
                     .frame(width: 1, height: imageHeight - 30)
                     .background(.primary)
                 
-                Button(action: tapPlus) {
+                Button {
+                    counter.add()
+                    try? session.updateApplicationContext(["value": counter.value])
+                } label: {
                     Image(systemName: "plus")
                         .frame(width: imageWidth, height: imageHeight)
                         .contentShape(Rectangle())
@@ -43,21 +49,6 @@ struct ContentView: View {
             .background(Color.gray)
             .clipShape(RoundedRectangle(cornerRadius: 4))
         }
-    }
-}
-
-extension ContentView {
-    private func tapMinus() {
-        guard counter.value > 0 else {
-            return
-        }
-        counter.value -= 1
-//        session.sendMessage(["count": counter.value], replyHandler: nil)
-    }
-    
-    private func tapPlus() {
-        counter.value += 1
-//        session.sendMessage(["count": counter.value], replyHandler: nil)
     }
 }
 

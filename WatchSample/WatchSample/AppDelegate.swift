@@ -12,7 +12,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     let counter: Counter = .init()
     
     private lazy var sessionDelegator: SessionDelegator = {
-        SessionDelegator()
+        SessionDelegator(counter: counter)
     }()
     
     func application(_ application: UIApplication,
