@@ -9,6 +9,8 @@ import WatchKit
 import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    let counter: Counter = .init()
+    
     private lazy var sessionDelegator: SessionDelegator = {
         SessionDelegator()
     }()
