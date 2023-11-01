@@ -14,6 +14,7 @@ struct WatchSampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appDelegate.counter)
         }
     }
 }

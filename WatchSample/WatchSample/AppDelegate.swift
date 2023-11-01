@@ -9,6 +9,8 @@ import UIKit
 import WatchConnectivity
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    let counter: Counter = .init()
+    
     private lazy var sessionDelegator: SessionDelegator = {
         SessionDelegator()
     }()

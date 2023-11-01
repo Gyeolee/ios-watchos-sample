@@ -20,6 +20,8 @@
 		625B4C6F2AE9E44100399471 /* SessionDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4C6C2AE9E2F500399471 /* SessionDelegator.swift */; };
 		625B4C722AE9E63600399471 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4C712AE9E63600399471 /* ExtensionDelegate.swift */; };
 		625B4C742AE9E69E00399471 /* WatchSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B4C462AE9DC4A00399471 /* WatchSampleApp.swift */; };
+		62C367BC2AF2468800655E92 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C367BB2AF2468800655E92 /* Counter.swift */; };
+		62C367BD2AF2468800655E92 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C367BB2AF2468800655E92 /* Counter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		625B4C6A2AE9E28800399471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B4C6C2AE9E2F500399471 /* SessionDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegator.swift; sourceTree = "<group>"; };
 		625B4C712AE9E63600399471 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		62C367BB2AF2468800655E92 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				625B4C6C2AE9E2F500399471 /* SessionDelegator.swift */,
+				62C367BB2AF2468800655E92 /* Counter.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C367BC2AF2468800655E92 /* Counter.swift in Sources */,
 				625B4C6D2AE9E2F500399471 /* SessionDelegator.swift in Sources */,
 				625B4C742AE9E69E00399471 /* WatchSampleApp.swift in Sources */,
 				625B4C6B2AE9E28800399471 /* AppDelegate.swift in Sources */,
@@ -260,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C367BD2AF2468800655E92 /* Counter.swift in Sources */,
 				625B4C5B2AE9DC4B00399471 /* ContentView.swift in Sources */,
 				625B4C592AE9DC4B00399471 /* WatchSampleApp.swift in Sources */,
 				625B4C6F2AE9E44100399471 /* SessionDelegator.swift in Sources */,

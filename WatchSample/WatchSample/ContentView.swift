@@ -9,7 +9,7 @@ import SwiftUI
 import WatchConnectivity
 
 struct ContentView: View {
-    @State private var count: Int = 0
+    @EnvironmentObject var counter: Counter
     
     private var session = WCSession.default
     
@@ -18,11 +18,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(count)")
+            Text("\(counter.value)")
                 .font(.largeTitle)
             
             HStack {
-                Button(action: minus) {
+                Button(action: tapMinus) {
                     Image(systemName: "minus")
                         .frame(width: imageWidth, height: imageHeight)
                         .contentShape(Rectangle())
@@ -33,7 +33,7 @@ struct ContentView: View {
                     .frame(width: 1, height: imageHeight - 30)
                     .background(.primary)
                 
-                Button(action: plus) {
+                Button(action: tapPlus) {
                     Image(systemName: "plus")
                         .frame(width: imageWidth, height: imageHeight)
                         .contentShape(Rectangle())
@@ -47,17 +47,17 @@ struct ContentView: View {
 }
 
 extension ContentView {
-    private func minus() {
-        guard count > 0 else {
+    private func tapMinus() {
+        guard counter.value > 0 else {
             return
         }
-        count -= 1
-        session.sendMessage(["count": count], replyHandler: nil)
+        counter.value -= 1
+//        session.sendMessage(["count": counter.value], replyHandler: nil)
     }
     
-    private func plus() {
-        count += 1
-        session.sendMessage(["count": count], replyHandler: nil)
+    private func tapPlus() {
+        counter.value += 1
+//        session.sendMessage(["count": counter.value], replyHandler: nil)
     }
 }
 
