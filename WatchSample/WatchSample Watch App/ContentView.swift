@@ -11,25 +11,17 @@ import WatchConnectivity
 struct ContentView: View {
     @EnvironmentObject var counter: Counter
     
-    private var session = WCSession.default
-    
     var body: some View {
         VStack {
             Text("\(counter.value)")
                 .font(.largeTitle)
             
             HStack {
-                Button {
-                    counter.subtract()
-                    try? session.updateApplicationContext(["value": counter.value])
-                } label: {
+                Button(action: counter.subtract) {
                     Image(systemName: "minus")
                 }
                 
-                Button {
-                    counter.add()
-                    try? session.updateApplicationContext(["value": counter.value])
-                } label: {
+                Button(action: counter.add) {
                     Image(systemName: "plus")
                 }
             }

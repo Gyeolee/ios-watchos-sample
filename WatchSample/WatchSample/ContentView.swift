@@ -11,8 +11,6 @@ import WatchConnectivity
 struct ContentView: View {
     @EnvironmentObject var counter: Counter
     
-    private var session = WCSession.default
-    
     private let imageWidth: CGFloat = 50
     private let imageHeight: CGFloat = 50
     
@@ -22,10 +20,7 @@ struct ContentView: View {
                 .font(.largeTitle)
             
             HStack {
-                Button {
-                    counter.subtract()
-                    try? session.updateApplicationContext(["value": counter.value])
-                } label: {
+                Button(action: counter.subtract) {
                     Image(systemName: "minus")
                         .frame(width: imageWidth, height: imageHeight)
                         .contentShape(Rectangle())
@@ -36,10 +31,7 @@ struct ContentView: View {
                     .frame(width: 1, height: imageHeight - 30)
                     .background(.primary)
                 
-                Button {
-                    counter.add()
-                    try? session.updateApplicationContext(["value": counter.value])
-                } label: {
+                Button(action: counter.add) {
                     Image(systemName: "plus")
                         .frame(width: imageWidth, height: imageHeight)
                         .contentShape(Rectangle())
